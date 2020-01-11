@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
+	<script src="js/jquery-2.1.0.min.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+	<script>		
+	 	$(function(){
+	 		setInterval(adtext,3000);
+	 		$("#content_ok1").bind("click",content_ok1);
+	 		$("#content_ok2").bind("click",content_ok2);
+	 		$("#content_ok3").bind("click",content_ok3);
+	 	});
+
+		var adindex=0; 
+		var adtext; 
+		var textary=new Array("1","2","3","4");
+
+		function adtext(){	
+			adtext=textary[adindex];
+			adindex++;
+			if(adindex>textary.length){adindex=0;}						
+			$("#showtext").text(adtext); 	
+		}
+
+		function content_ok1(){
+			var score=[];
+			$.each($("input[name='score_option']:checked"),function(){
+				score.push($(this).val());
+			});
+			var result =$("#product_msg1").val();
+			$("#result1").html("評分: "+score+"<br>意見回饋: "+result);
+		}
+
+		function content_ok2(){
+			var score=[];
+			$.each($("input[name='score_option']:checked"),function(){
+				score.push($(this).val());
+			});
+			var result =$("#product_msg2").val();
+			$("#result2").html("評分: "+score+"<br>意見回饋: "+result);
+		}
+
+		function content_ok3(){
+			var score=[];
+			$.each($("input[name='score_option']:checked"),function(){
+				score.push($(this).val());
+			});
+			var result =$("#product_msg3").val();
+			$("#result3").html("評分: "+score+"<br>意見回饋: "+result);
+		}
+	</script>
+	<style type="text/css">
+		.ui-icon-you:after{background-image:url(images/youtube.jpg); }
+
+		@media screen and (min-width: 576px){
+			.list{
+				width: 576px;
+			}
+		}
+	</style>
+
+</head>
+<body>
+	<!-- home -->
+	<div data-role="page" id="home" data-fullscreen="true">
+		<div data-role="header"  data-position="fixed">
+			<h1>展示區</h1>
+		</div>
+		<div data-role="main" class="ui-content">
+			<h1 align="center" >最新商品優惠區</h1>
+			<h1 align="center" id="showtext"></h1>
+			<div data-role="navbar" data-grid="b">
+				<ul>
+					<li>					
+						<a href="#popup_01" data-rel="popup" data-position-to="window">
+							<img src="images/ACL037300.jpg" alt="" width="100%">
+						</a>
+						<div data-role="collapsible-set">
+							<div data-role="collapsible" >
+								<h3>1號產品</h3>
+								<div data-role="fieldcontain">
+									<fieldset data-role="controlgroup" data-type="horizontal">
+										<legend>評分</legend>
+										<input type="radio" name="score_option" id="score_option1_01" value="不好">
+										<label for="score_option1_01">不好</label>
+										<input type="radio" name="score_option" id="score_option1_02" value="普通">
+										<label for="score_option1_02">普通</label>
+										<input type="radio" name="score_option" id="score_option1_03" value="非常好">
+										<label for="score_option1_03">非常好</label>
+									</fieldset>
+								</div>	
+								<p>意見回饋:</p>
+								<textarea id="product_msg1"></textarea>	
+								<a href="#" data-role="button" data-theme="b" id="content_ok1">確定</a>
+							</div>
+						</div>
+						<p id="result1"></p>
+						<div data-role="popup" id="popup_01">
+							<a href="#" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right" data-rel="back"></a>
+							<img src="images/ACL037300.jpg" alt="" width="50%">
+							<p>價格:120</p>
+							<p>詳細說明如下:</p>
+							<p>她們中間不過階段她的委，強化戰略提出中間製作提前請教正式一起新手運，故事我要預防網吧那天推薦一大機場通，晚上下午處理器過程廠家參數忘記理解老大組圖分類地上，儀器威脅晚上想要上述母親等級回，住宅和我讓。</p>
+						</div>
+					</li>
+					<li>
+						<a href="#popup_02" data-rel="popup" data-position-to="window">
+							<img src="images/ACL039600.jpg" alt="" width="100%">
+						</a>
+						<div data-role="collapsible-set">
+							<div data-role="collapsible" >
+								<h3>2號產品</h3>
+								<div data-role="fieldcontain">
+									<fieldset data-role="controlgroup" data-type="horizontal">
+										<legend>評分</legend>
+										<input type="radio" name="score_option" id="score_option2_01" value="不好">
+										<label for="score_option2_01">不好</label>
+										<input type="radio" name="score_option" id="score_option2_02" value="普通">
+										<label for="score_option2_02">普通</label>
+										<input type="radio" name="score_option" id="score_option2_03" value="非常好">
+										<label for="score_option2_03">非常好</label>
+									</fieldset>
+								</div>
+								<p>意見回饋:</p>
+								<textarea id="product_msg2"></textarea>	
+								<a href="#" data-role="button" data-theme="b" id="content_ok2">確定</a>
+							</div>
+						</div>
+						<p id="result2"></p>
+						<div data-role="popup" id="popup_02">
+							<a href="#" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right" data-rel="back"></a>
+							<img src="images/ACL039600.jpg" alt="" width="50%">
+							<p>價格:150</p>
+							<p>詳細說明如下:</p>
+							<p>英雄醫學將會高校一款自己高，只要瀋陽狀態近日目前之處提，位於一切還在私人其他歐美面積思路呼吸填寫吃了突然數，溝通注重勝利規律常委會獲，下來支撐電力點點語。</p>
+						</div>
+					</li>
+					<li>
+						<a href="#popup_03" data-rel="popup" data-position-to="window">
+							<img src="images/AEB002800.jpg" alt="" width="100%">
+						</a>
+						<div data-role="collapsible-set">
+							<div data-role="collapsible" >
+								<h3>3號產品</h3>
+								<div data-role="fieldcontain">
+									<fieldset data-role="controlgroup" data-type="horizontal">
+										<legend>評分</legend>
+										<input type="radio" name="score_option" id="score_option3_01" value="不好">
+										<label for="score_option3_01">不好</label>
+										<input type="radio" name="score_option" id="score_option3_02" value="普通">
+										<label for="score_option3_02">普通</label>
+										<input type="radio" name="score_option" id="score_option3_03" value="非常好">
+										<label for="score_option3_03">非常好</label>
+									</fieldset>
+								</div>	
+								<p>意見回饋:</p>
+								<textarea id="product_msg3"></textarea>	
+								<a href="#" data-role="button" data-theme="b" id="content_ok3">確定</a>
+							</div>
+						</div>
+						<p id="result3"></p>
+						<div data-role="popup" id="popup_03">
+							<a href="#" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right" data-rel="back"></a>
+							<img src="images/AEB002800.jpg" alt="" width="50%">
+							<p>價格:80</p>
+							<p>詳細說明如下:</p>
+							<p>飲食相信分別大概一片超級男性評分原創白色提到機構型號，內部消費者。</p>
+						</div>
+					</li>
+				</ul>
+			</div>			
+		</div>
+
+		<div data-role="footer" data-theme="b" data-position="fixed">
+			<div data-role="navbar" data-grid="a"  data-iconpos="left">
+				<ul>
+					<li><a href="#home" data-icon="home">最新商品</a></li>
+					<li><a href="#list" data-icon="info" data-transition="flow">清單</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- list -->
+	<div data-role="page" id="list">
+		<div data-role="header" data-theme="a" data-position="fixed">
+			<a href="" data-role="button" data-theme="b" data-rel="back">back</a>
+			<h1>清單</h1>
+		</div>
+		<div data-role="main" class="ui-content" >	
+			<div  align="center">
+				<a href="https://www.youtube.com/" data-role="button" data-theme="b" class="list">YouTube</a>
+				<a href="" data-role="button" data-theme="b" class="list">1</a>
+				<a href="" data-role="button" data-theme="b" class="list">2</a>
+				<a href="" data-role="button" data-theme="b" class="list">3</a>				
+			</div>
+			<div data-role="navbar" data-grid="b"  data-iconpos="left">
+				<ul>
+					<li><a href="#" >產品</a></li>
+					<li><a href="#" >定價</a></li>
+					<li><a href="#" >作者</a></li>
+					<li><a href="#" >A</a></li>
+					<li><a href="#" >$100</a></li>
+					<li><a href="#" >a1</a></li>
+					<li><a href="#" >B</a></li>
+					<li><a href="#" >$120</a></li>
+					<li><a href="#" >b1</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
+
+
